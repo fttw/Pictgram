@@ -29,6 +29,6 @@ end
   end
   
   def user_params
-  params.require(:session).permit(:user_id)
+  params.require(:session).permit(:name, :email, :password, :password_confirmation)
   end
 end

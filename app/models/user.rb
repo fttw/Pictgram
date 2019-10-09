@@ -4,6 +4,8 @@ class User < ApplicationRecord
   validates :password, length: { in: 8..32 }, format: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,100}+\z/i
 
   has_many :topics
+  has_many :favorites
+  has_many :favorites_topics, through: :favorites, source: 'topic'
 
   has_secure_password
 end
